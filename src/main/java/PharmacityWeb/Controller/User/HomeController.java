@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController extends BaseController{
 	
-	@RequestMapping(value = {"/", "trang-chu"})
+	@RequestMapping(value = {"/", "/trang-chu"})
 	public ModelAndView Index() {
 		_mvShare.addObject("slides", _HomeService.getDataSlide());
 		_mvShare.addObject("categorys", _HomeService.getDataCategorys());
