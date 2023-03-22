@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import PharmacityWeb.Dto.PaginatesDto;
 import PharmacityWeb.Service.User.CategoryServiceImpl;
+import PharmacityWeb.Service.User.IProductService;
 import PharmacityWeb.Service.User.PaginateServiceImpl;
 
 @Controller
@@ -41,4 +42,5 @@ public class CategoryController extends BaseController {
 		_mvShare.addObject("productsPaginate", categoryService.GetDataProductsPaginate(Integer.parseInt(id) ,paginateInfo.getStart(), totalProductPage));
 		return _mvShare;
 	}
+	
 }	

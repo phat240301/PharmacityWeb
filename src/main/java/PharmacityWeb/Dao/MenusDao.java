@@ -10,6 +10,7 @@ import PharmacityWeb.Entity.Menus;
 import PharmacityWeb.Entity.MapperMenus;
 @Repository
 public class MenusDao extends BaseDao {
+	
 	public List<Menus> getDataMenus() {
 		List<Menus> list = new ArrayList<Menus>();
 		String sql = "SELECT * FROM menus";

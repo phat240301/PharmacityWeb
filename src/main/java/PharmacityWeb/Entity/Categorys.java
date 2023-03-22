@@ -4,6 +4,7 @@ public class Categorys {
 	private int id;
 	private String name;
 	private String description;
+	private int id_menu;
 	
 	public Categorys() {
 		super();
@@ -26,6 +27,14 @@ public class Categorys {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public int getId_menu() {
+		return id_menu;
+	}
+
+	public void setId_menu(int id_menu) {
+		this.id_menu = id_menu;
 	}
 	
 }

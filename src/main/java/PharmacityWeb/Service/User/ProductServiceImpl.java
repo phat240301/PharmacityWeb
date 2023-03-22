@@ -22,5 +22,9 @@ public class ProductServiceImpl implements IProductService{
 	public List<ProductsDto> GetProductByIDCategory(int id){
 		return productsDao.GetAllProductsByID(id);
 	}
+	
+	public List<ProductsDto> searchByKeyword(String keyword) {
+	    return productsDao.searchByKeyword(keyword);
+	  } 
 
 }
