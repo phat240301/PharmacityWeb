@@ -24,7 +24,7 @@ public class SearchController {
 
         String result = "";
         for (ProductsDto product : products) {
-            result += "<div>" + product.getName() + "</div>";
+            result += "<div><a href='/PharmacityWeb/chi-tiet-san-pham/"+product.getId_product()+"'>"+ product.getName() + "</a></div>";
         }
         if (result.equals("")) {
 //            result = "<div>No result found</div>";

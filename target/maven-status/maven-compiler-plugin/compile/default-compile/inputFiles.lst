@@ -40,5 +40,6 @@ C:\Users\ASUS\Desktop\PharmacityWeb\src\main\java\PharmacityWeb\Controller\User\
 C:\Users\ASUS\Desktop\PharmacityWeb\src\main\java\PharmacityWeb\Dto\PaginatesDto.java
 C:\Users\ASUS\Desktop\PharmacityWeb\src\main\java\PharmacityWeb\Entity\BillDetail.java
 C:\Users\ASUS\Desktop\PharmacityWeb\src\main\java\PharmacityWeb\Dto\CategorysDto.java
+C:\Users\ASUS\Desktop\PharmacityWeb\src\main\java\PharmacityWeb\Controller\User\SearchController.java
 C:\Users\ASUS\Desktop\PharmacityWeb\src\main\java\PharmacityWeb\Service\User\BillsServiceImpl.java
 C:\Users\ASUS\Desktop\PharmacityWeb\src\main\java\PharmacityWeb\Service\User\PaginateServiceImpl.java

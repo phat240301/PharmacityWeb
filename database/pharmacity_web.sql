@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2023 at 11:25 AM
+-- Generation Time: Mar 22, 2023 at 09:19 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.3.29
 
@@ -79,18 +79,19 @@ INSERT INTO `bills` (`id`, `user`, `phone`, `display_name`, `address`, `total`, 
 CREATE TABLE `categorys` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL
+  `description` varchar(255) NOT NULL,
+  `id_menu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `categorys`
 --
 
-INSERT INTO `categorys` (`id`, `name`, `description`) VALUES
-(1, 'Đồng hồ', ''),
-(2, 'Vòng tay', ''),
-(3, 'Dây đeo tay', ''),
-(4, 'Dây chuyền', '');
+INSERT INTO `categorys` (`id`, `name`, `description`, `id_menu`) VALUES
+(1, 'Đồng hồ', '', 1),
+(2, 'Vòng tay', '', 2),
+(3, 'Dây đeo tay', '', 1),
+(4, 'Dây chuyền', '', 4);
 
 -- --------------------------------------------------------
 
@@ -213,7 +214,7 @@ INSERT INTO `products` (`id`, `id_category`, `sizes`, `name`, `price`, `sale`, `
 (22, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
 (23, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
 (24, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
-(25, 1, 'L,S,M', 'Nametét', 200000, 0, 'tital', 1, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
+(25, 1, 'L,S,M', 'test', 200000, 0, 'tital', 1, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
 (26, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
 (27, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43'),
 (28, 1, 'L,S,M', 'Name', 200000, 0, 'tital', 1, 1, 'details', '2020-04-09 11:38:43', '2020-04-09 11:38:43');
@@ -286,7 +287,8 @@ ALTER TABLE `bills`
 -- Indexes for table `categorys`
 --
 ALTER TABLE `categorys`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_menu` (`id_menu`);
 
 --
 -- Indexes for table `colors`
@@ -383,6 +385,12 @@ ALTER TABLE `billdetail`
   ADD CONSTRAINT `FK_bill` FOREIGN KEY (`id_bill`) REFERENCES `bills` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_product` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `billdetail_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `categorys`
+--
+ALTER TABLE `categorys`
+  ADD CONSTRAINT `categorys_ibfk_1` FOREIGN KEY (`id_menu`) REFERENCES `menus` (`id`);
 
 --
 -- Constraints for table `colors`

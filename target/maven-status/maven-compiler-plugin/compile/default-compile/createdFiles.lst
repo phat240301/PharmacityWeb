@@ -20,6 +20,7 @@ PharmacityWeb\Service\User\IProductService.class
 PharmacityWeb\Service\User\BillsServiceImpl.class
 PharmacityWeb\Controller\User\CartController.class
 PharmacityWeb\Dao\BillsDao.class
+PharmacityWeb\Controller\User\SearchController.class
 PharmacityWeb\Dto\ProductsDto.class
 PharmacityWeb\Controller\User\ProductController.class
 PharmacityWeb\Entity\Bills.class
