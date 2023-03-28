@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +18,7 @@ public class SearchController {
     @Autowired
     private IProductService productService;
 
-    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    @RequestMapping("/search")
     @ResponseBody
     public String search(@RequestParam(required=false, name="query") String query) {
         List<ProductsDto> products = productService.searchByKeyword(query);
@@ -31,5 +32,6 @@ public class SearchController {
         }
         return result;
     }
+ 
 }
 

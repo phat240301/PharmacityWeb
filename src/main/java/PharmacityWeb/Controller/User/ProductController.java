@@ -20,7 +20,7 @@ public class ProductController extends BaseController{
 	@Autowired
 	private IProductService _productService;
 	
-	@RequestMapping(value = {"chi-tiet-san-pham/{id}"})
+	@RequestMapping(value = {"chi-tiet-san-pham/{id}","trang-chu/chi-tiet-san-pham/{id}"})
 	public ModelAndView Index(@PathVariable long id) {
 		_mvShare.setViewName("user/products/product");
 		_mvShare.addObject("slides",_HomeService.getDataSlide());

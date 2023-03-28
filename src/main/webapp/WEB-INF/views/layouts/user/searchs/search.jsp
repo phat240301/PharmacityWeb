@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <body>
-	<form action="#" class="navbar-search pull-left">
+	<form autocomplete="off" action="#" class="navbar-search pull-left">
 		<input type="text" id="search_box" placeholder="Tìm sản phẩm .." class="search-query span2">
-		 <div id="search_suggestion"></div>
+		 <div class="autocomplete" style="width:300px;" id="search_suggestion"></div>
 		 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	    <script>
 	        $(document).ready(function(){
@@ -11,7 +11,7 @@
 	                var query = $(this).val();
 	                if(query != ''){
 	                    $.ajax({
-	                        url:"search",
+	                    	url:"/PharmacityWeb/search",
 	                        method:"GET",
 	                        data:{query:query},
 	                        success:function(data){
@@ -21,7 +21,7 @@
 	                    });
 	                }else{
 	                	$.ajax({
-	                        url:"search",
+	                		url:"/PharmacityWeb/search",
 	                        method:"GET",
 	                        data:{query:null},
 	                        success:function(data){
