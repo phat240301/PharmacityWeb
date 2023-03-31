@@ -53,9 +53,6 @@ Navigation Bar Section
 								<li class=""><a
 									href="<c:url value="/trang-chu/${ item.id }"/>">${ item.name }</a>
 							</c:if></li>
-
-
-
 					</c:forEach>
 
 

@@ -19,7 +19,7 @@ Body Section
 		<div id="sidebar" class="span3">
 			<div class="well well-small">
 				<ul class="nav nav-list">
-				<c:forEach var="item" items="${ categorys }">
+				<c:forEach var="item" items="${ categoryByIDMenu }">
 						<li><a href="<c:url value ="/san-pham/${ item.id }"/>"><span
 								class="icon-circle-blank"></span> ${ item.name }</a></li>
 					</c:forEach>

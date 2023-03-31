@@ -9,7 +9,6 @@ import PharmacityWeb.Dao.CategorysDao;
 import PharmacityWeb.Dao.MenusDao;
 import PharmacityWeb.Dao.ProductsDao;
 import PharmacityWeb.Dao.SlidesDao;
-import PharmacityWeb.Dto.CategorysDto;
 import PharmacityWeb.Dto.ProductsDto;
 import PharmacityWeb.Entity.Categorys;
 import PharmacityWeb.Entity.Menus;
@@ -43,4 +42,5 @@ public class HomeServiceImpl implements IHomeService {
 		return listProducts;
 	}
 
+	
 }

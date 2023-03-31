@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2023 at 09:19 AM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 7.3.29
+-- Generation Time: Mar 29, 2023 at 09:47 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `billdetail` (
   `id_bill` bigint(20) NOT NULL,
   `quanty` int(11) NOT NULL,
   `total` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `billdetail`
@@ -57,7 +57,7 @@ CREATE TABLE `bills` (
   `total` double NOT NULL,
   `quanty` int(11) NOT NULL,
   `note` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `bills`
@@ -81,17 +81,60 @@ CREATE TABLE `categorys` (
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `id_menu` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `categorys`
 --
 
 INSERT INTO `categorys` (`id`, `name`, `description`, `id_menu`) VALUES
-(1, 'Đồng hồ', '', 1),
-(2, 'Vòng tay', '', 2),
-(3, 'Dây đeo tay', '', 1),
-(4, 'Dây chuyền', '', 4);
+(1, 'Thuốc không kê đơn', '', 1),
+(2, 'Thực phẩm dinh dưỡng', '', 2),
+(3, 'Thuốc kê đơn', '', 1),
+(4, 'Dụng cụ sơ cứu', '', 2),
+(9, 'Kế hoạch gia đình', '', 2),
+(10, 'Khẩu trang y tế', '', 2),
+(11, 'Chăm sóc mắt/tai/mũi', '', 2),
+(12, 'Chăm sóc chân', '', 2),
+(13, 'Chống muỗi', '', 2),
+(14, 'Dầu tràm, Dầu xoa bóp', '', 2),
+(15, 'Sản phẩm phòng tắm', '', 3),
+(16, 'Sản phẩm khử mùi', '', 3),
+(17, 'Chăm sóc tóc', '', 3),
+(18, 'Vệ sinh phụ nữ', '', 3),
+(19, 'Chăm sóc nam giới', '', 3),
+(20, 'Chăm sóc răng miệng', '', 3),
+(21, 'Chăm sóc cơ thể', '', 3),
+(22, 'Hàng tổng hợp', '', 4),
+(23, 'Hàng bách hóa', '', 4),
+(24, 'TPCN nhóm dạ dày', '', 5),
+(25, 'TPCN nhóm tim mạch', '', 5),
+(26, 'TPCN nhóm đường huyết', '', 5),
+(27, 'TPCN nhóm hô hấp', '', 5),
+(28, 'TPCN nhóm thần kinh', '', 5),
+(29, 'TPCN nhóm cơ xương khớp', '', 5),
+(30, 'TPCN nhóm giảm cân', '', 5),
+(31, 'TPCN nhóm chăm sóc sắc đẹp', '', 5),
+(32, 'TPCN nhóm chăm sóc sức khỏe nam nữ', '', 5),
+(33, 'TPCN nhóm mắt/tai/mũi', '', 5),
+(34, 'TPCN nhóm vitamin tổng hợp và khoáng chất', '', 5),
+(35, 'TPCN nhóm chăm sóc tóc', '', 5),
+(36, 'TPCN nhóm cho gan', '', 5),
+(37, 'TPCN nhóm khác', '', 5),
+(38, 'Chăm sóc bé', '', 6),
+(39, 'TPCN dành cho trẻ em', '', 6),
+(40, 'Sản phẩm dành cho mẹ', '', 6),
+(41, 'TPCN dành cho phụ nữ mang thai', '', 6),
+(42, 'Chăm sóc mặt', '', 7),
+(43, 'Sản phẩm chống nắng', '', 7),
+(44, 'Dụng cụ làm đẹp', '', 7),
+(45, 'Dược - mỹ phẩm', '', 7),
+(50, 'Nhiệt kế', '', 8),
+(51, 'Máy đo huyết áp', '', 8),
+(52, 'Máy đo đường huyết', '', 8),
+(53, 'Máy đo khí dụng', '', 8),
+(54, 'Thiết bị y tế khác', '', 8),
+(55, 'Dụng cụ khác', '', 8);
 
 -- --------------------------------------------------------
 
@@ -105,7 +148,7 @@ CREATE TABLE `colors` (
   `name` varchar(255) NOT NULL,
   `code` varchar(255) NOT NULL,
   `img` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `colors`
@@ -148,7 +191,7 @@ CREATE TABLE `menus` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `url` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `menus`
@@ -163,6 +206,19 @@ INSERT INTO `menus` (`id`, `name`, `url`) VALUES
 (6, 'Mẹ và bé', NULL),
 (7, 'Chắm sóc sắc đẹp', NULL),
 (8, 'Thiết bị y tế', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `order_id` varchar(50) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -183,7 +239,7 @@ CREATE TABLE `products` (
   `details` longtext NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products`
@@ -230,7 +286,7 @@ CREATE TABLE `slide` (
   `img` varchar(255) NOT NULL,
   `caption` varchar(255) NOT NULL,
   `content` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `slide`
@@ -254,7 +310,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `display_name` varchar(150) NOT NULL,
   `address` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -304,6 +360,12 @@ ALTER TABLE `menus`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -342,7 +404,7 @@ ALTER TABLE `bills`
 -- AUTO_INCREMENT for table `categorys`
 --
 ALTER TABLE `categorys`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `colors`
@@ -355,6 +417,12 @@ ALTER TABLE `colors`
 --
 ALTER TABLE `menus`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `products`

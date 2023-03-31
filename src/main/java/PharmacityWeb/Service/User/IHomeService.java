@@ -14,7 +14,11 @@ import PharmacityWeb.Entity.Slides;
 public interface IHomeService {
 	@Autowired
 	public List<Slides> getDataSlide();
+	
 	public List<Categorys> getDataCategorys();
+	
 	public List<Menus> getDataMenus();
+	
 	public List<ProductsDto> getDataProducts();
+	
 }
