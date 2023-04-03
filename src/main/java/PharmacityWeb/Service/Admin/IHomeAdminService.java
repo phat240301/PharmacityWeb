@@ -19,4 +19,5 @@ public interface IHomeAdminService {
 	public List<ProductsDto> getDataProducts();
 	public int addItemMenus(String name);
 	public int deleteMenu(int menuId);
+	public int editMenu(int menuId, String name);
 }

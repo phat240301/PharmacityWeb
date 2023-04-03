@@ -14,10 +14,4 @@ public class BaseAdminController {
 	@Autowired
 	HomeAdminServiceImpl _HomeService;
 	public ModelAndView _mvShare = new ModelAndView();
-	
-//	@PostConstruct
-//	public ModelAndView init() {
-//		_mvShare.addObject("menus", _HomeService.getDataMenus());
-//		return _mvShare;
-//	}
 }

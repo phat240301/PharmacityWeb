@@ -1,25 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<form id="add-menu-form" action="<c:url value="/quan-tri/add"/>" method="post">
-    <div class="form-group">
-        <label for="name">Tên menu:</label>
-        <input type="text" class="form-control" id="name" name="name">
-    </div>
-    <button type="submit" class="btn btn-primary">Thêm mới</button>
+<%@include file="/WEB-INF/views/layouts/admin/taglib.jsp"%>
+<form id="add-menu-form" action="<c:url value="/quan-tri/add"/>"
+	method="post">
+	<div class="form-group">
+		<label for="name">Tên menu:</label> <input type="text"
+			class="form-control" id="name" name="name">
+	</div>
+	<button type="submit" class="btn btn-primary">Thêm mới</button>
+
 </form>
+</br>
 <div class="list-wrapper">
-	<ul>
-  <c:forEach var="item" items="${menus}" varStatus="index">
-    <li>
-      <div class="form-check form-check-primary">
-        <label class="form-check-label">${item.name}</label>
-      </div>
-      <button class="btn-delete" data-menu-id="${item.id}">
-      	<a href="<c:url value="/quan-tri/delete/${ item.id }"/>"> Xóa</a>
-      </button>
-    </li>
-  </c:forEach>
-</ul>
+
+
+	<table class="table">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Tên</th>
+			<th scope="col">Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="item" items="${menus}" varStatus="index">
+			<tr>
+				<td>
+					<form action="/quan-tri/update/${item.id}" method="POST">
+						 <input type="hidden" name="_method" value="PUT">
+    					<input type="text" name="name" value="${item.name}">
+    						<button type="submit">Lưu</button>
+					</form>
+				</td>
+				<td>
+					<button class="btn-delete" data-menu-id="${item.id}">
+						<a href="<c:url value="/quan-tri/delete/${ item.id }"/>"> Xóa</a>
+					</button> |
+					<button type="submit" class="edit-menu" id="submitBtn" data-menu-id="${item.id}">
+						<a href="<c:url value="/quan-tri/update/${ item.id }/${ item.name }"/>">Sửa</a>
+					</button>
+				</td>
+			</tr>
+		</c:forEach>
+	</tbody>
+</table>
+
 </div>
 
 <script>
@@ -50,4 +74,6 @@
 			});
 		});
 	});
+	
+
 </script>

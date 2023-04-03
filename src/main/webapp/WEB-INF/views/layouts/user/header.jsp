@@ -44,19 +44,20 @@ Navigation Bar Section
 				class="icon-bar"></span> <span class="icon-bar"></span>
 			</a>
 			<div class="nav-collapse">
-				<ul class="nav">
+				
 					<c:forEach var="item" items="${ menus }" varStatus="index">
-						<li class="active"><c:if test="${ index.first }">
-								<li class="active"><a
-									href="<c:url value="/trang-chu/${ item.id }"/>">${ item.name }</a>
-							</c:if> <c:if test="${ not index.first }">
-								<li class=""><a
-									href="<c:url value="/trang-chu/${ item.id }"/>">${ item.name }</a>
-							</c:if></li>
+					<ul class="nav">
+							<c:if test="${ index.first }">
+								<li class="active">
+							</c:if> 
+							<c:if test="${ not index.first }">
+								<li class="">
+							</c:if>
+									<a href="<c:url value="/trang-chu/${ item.id }"/>">${ item.name }</a>
+								</li>
+					</ul>
 					</c:forEach>
-
-
-				</ul>
+			
 				
 				<%@include file ="/WEB-INF/views/layouts/user/searchs/search.jsp" %>
 				

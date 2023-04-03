@@ -90,7 +90,7 @@
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="<c:url value=""/>">
+            <a class="nav-link" href="<c:url value="/quan-tri/"/>">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -99,7 +99,7 @@
           </li>
           
           <li class="nav-item menu-items">
-            <a class="nav-link" href="<c:url value=""/>">
+            <a class="nav-link" href="<c:url value="/quan-tri/"/>">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
@@ -115,11 +115,11 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="<c:url value="/quan-tri/user"/>">
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
-              <span class="menu-title">Charts</span>
+              <span class="menu-title">Users</span>
             </a>
           </li>
           <li class="nav-item menu-items">

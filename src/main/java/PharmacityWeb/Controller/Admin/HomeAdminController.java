@@ -1,6 +1,9 @@
 package PharmacityWeb.Controller.Admin;
 
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -76,4 +80,31 @@ public class HomeAdminController extends BaseAdminController {
 	        return _mvShare;
 	    }
 	}
+//
+//	@RequestMapping(value = "/quan-tri/update/{id}/{name}", method = RequestMethod.GET)
+//	public @ResponseBody ModelAndView updateMenu(@PathVariable int id,@PathVariable String name) {
+//		    int rowsAffected = _HomeService.editMenu(id,name);
+//		    if (rowsAffected > 0) {
+//		    	_mvShare.addObject("slides", _HomeService.getDataSlide());
+//				_mvShare.addObject("categorys", _HomeService.getDataCategorys());
+//				_mvShare.addObject("products", _HomeService.getDataProducts());
+//		        _mvShare.addObject("menus", _HomeService.getDataMenus());
+//		        return _mvShare;
+//		    } else {
+//		    	_mvShare.addObject("slides", _HomeService.getDataSlide());
+//				_mvShare.addObject("categorys", _HomeService.getDataCategorys());
+//				_mvShare.addObject("products", _HomeService.getDataProducts());
+//		        // Nếu thêm menu không thành công, ta cần hiển thị thông báo lỗi lên màn hình
+//		        String errorMsg = "Xóa menu không thành công";
+//		        _mvShare.addObject("errorMsg", errorMsg);
+//		        return _mvShare;
+//		    }
+//		}
+	
+//	@RequestMapping(value = "/quan-tri/update/{id}", method = RequestMethod.PUT)
+//	public ModelAndView updateMenu(@PathVariable("id") int id, HttpServletRequest request) {
+//	    String name = request.getParameter("name");
+//	    _HomeService.editMenu(id, name);
+//	    return _mvShare;
+//	}
 }

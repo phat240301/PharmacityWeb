@@ -50,4 +50,8 @@ public class HomeAdminServiceImpl implements IHomeAdminService{
 		return menusDao.deleteMenu(menuId);
 	}
 	
+	public int editMenu(int menuId, String name) {
+		return menusDao.editMenu(menuId,name);
+	}
+	
 }

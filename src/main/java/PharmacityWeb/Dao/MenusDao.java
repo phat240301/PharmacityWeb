@@ -41,6 +41,15 @@ public class MenusDao extends BaseDao {
 	    }
 	    return rowsAffected;
 	}
-
 	
+	public int editMenu(int menuId, String name) {
+	    String sql = "UPDATE menus SET name = ? WHERE id = ?";
+	    int rowsAffected = 0;
+	    try {
+	        rowsAffected = _jdbcTemplate.update(sql, name, menuId);
+	    } catch (Exception ex) {
+	        ex.printStackTrace();
+	    }
+	    return rowsAffected;
+	}
 }

@@ -1,9 +1,16 @@
 package PharmacityWeb.Dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import PharmacityWeb.Entity.Users;
+import PharmacityWeb.Entity.MapperMenus;
+import PharmacityWeb.Entity.MapperSliders;
 import PharmacityWeb.Entity.MapperUsers;
+import PharmacityWeb.Entity.Menus;
+import PharmacityWeb.Entity.Slides;
 
 @Repository
 public class UsersDao extends BaseDao{
@@ -33,4 +40,11 @@ public class UsersDao extends BaseDao{
 		Users result = _jdbcTemplate.queryForObject(sql, new MapperUsers());
 		return result;
 	};
+	
+	public List<Users> getDataUser(){
+		List<Users> list = new ArrayList<Users>();
+		String sql = "SELECT * FROM users ";
+		list = _jdbcTemplate.query(sql, new MapperUsers());
+		return list;
+	}	
 }
